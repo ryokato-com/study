@@ -1,0 +1,170 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+
+.p-section_lead {
+    .p-lead_list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        transform: translateY( myrem(-25) );
+        @include mq(md) {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            transform: translateY( myrem(-50) );
+        }
+    }
+    .p-lead_list li {
+        font-size: myrem(20);
+        line-height: calc( myrem(20) * 1.5 );
+        background-color: $white;
+        border-radius: 100vh;
+        border: 2px solid $green;
+        column-gap: 50px;
+        align-self: stretch;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1 / 1;
+        @include mq(md) {
+            font-size: myrem(30);
+            line-height: calc( myrem(30) * 1.25 );
+        }
+    }
+}
+
+
+.p-section_page-catch {
+
+}
+
+// conpany
+.p-section_company--contact {
+    background-color: $blue;
+}
+
+// introduce
+.p-section_introduce {
+
+    .p-introduce_list {
+        display: grid;
+    }
+}
+
+.p-introduce_list{
+    max-inline-size: max-content;
+    margin-inline: auto;
+
+    li {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-bottom: myrem(15);
+        &::before {
+            content: "";
+            display: inline-block;
+            width: myrem(30);
+            height: myrem(20);
+            background-image: url(./img/contact/check.webp);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 0.5em;
+        }
+    }
+}
+
+.p-introduce_txt {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    margin-top: myrem(60);
+    &::before {
+        content: "";
+        display: inline-block;
+        width: myrem(60);
+        height: myrem(60);
+        background-image: url(./img/contact/45line.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 0.5em;
+    }
+    &::after {
+        content: "";
+        display: inline-block;
+        width: myrem(60);
+        height: myrem(60);
+        background-image: url(./img/contact/45line.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 0.5em;
+        transform: scaleX(-1);
+    }
+}
+
+.p-introduce_img {
+    display: block;
+    margin: myrem(100) auto 0;
+    width: 100%;
+    @include mq(sm) {
+        width: 60%;
+    }
+}
+
+
+//step
+.p-section_step {
+    background-color: $lightgreen;
+
+    &-inner {
+        background-color: $white;
+        padding: myrem(50) myrem(30);
+        border-radius: myrem(30);
+        @include mq(md) {
+            padding: myrem(100) myrem(150);
+        }
+    }
+}
+
+.p-step {
+    &_list {
+        margin-top: myrem(60);
+        @include mq(md) {
+            margin-top: myrem(180);
+        }
+    }
+}
+
+
+
+//form
+.p-section_form {
+
+    &-title {
+        margin-top: myrem(80);
+    }
+
+
+}
+.p-form-caution {
+
+    border-top: 1px solid $green;
+    border-bottom: 1px solid $green;
+    padding: myrem(60) 0;
+    max-width: myrem(900);
+    margin: 0 auto;
+
+    h3 {
+        font-size: myrem(30);
+        text-align: center;
+        margin-bottom: myrem(40);
+    }
+    ul {
+        max-inline-size: max-content;
+        margin-inline: auto;
+    }
+}

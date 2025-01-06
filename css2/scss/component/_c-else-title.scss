@@ -1,0 +1,47 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-else-title {
+
+  h3 {
+    color: $green;
+    font-size: myrem(20);
+    margin-bottom: myrem(15);
+    @include mq(md) {
+      font-size: myrem(24);
+      margin-bottom: myrem(20);
+    }
+  }
+
+  &.c-else-title--single {
+
+    h3 {
+      font-size: myrem(20);
+      margin-bottom: myrem(15);
+      @include mq(md) {
+        font-size: myrem(30);
+        margin-bottom: myrem(26);
+      }
+    }
+  }
+
+  .point {
+    display: flex;
+    align-items: center;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: myrem(30);
+        height: myrem(37);
+        background-image: url("./img/location/point.webp");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: .5em;
+    }
+  }
+
+
+
+
+}

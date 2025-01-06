@@ -1,0 +1,82 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+
+.l-footer {
+    background-color: $green;
+    padding: myrem(50) 0;
+    color: $white;
+    @include mq(md) {
+        padding: myrem(100) 0;
+    }
+
+    &_wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: myrem(30);
+        @include mq(md) {
+            grid-template-columns: 50% 18% 24% ;
+            gap: unset;
+            gap: 4%;
+        }
+    }
+
+    &_box1 {
+        font-size: myrem(12);
+        h3 {
+            margin-bottom: myrem(20);
+        }
+    }
+
+    &_box2 {
+        display: flex;
+
+        p:first-child {
+            margin-right: myrem(30);
+        }
+
+        p a {
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+        }
+        p a:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &_box3 {        
+        .tel {
+            background-color: #00a182;
+            padding: myrem(10);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: myrem(10) myrem(10) myrem(10) myrem(20);
+            font-size: myrem(22);
+            margin-bottom: myrem(15);
+            &::before {
+                content: "";
+                display: inline-block;
+                width: myrem(20);
+                height: myrem(20);
+                background-image: url("./img/top/tel.webp");
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-right: .1em;
+              }
+        }
+    }
+
+    &_sns {
+            margin-top: myrem(30);
+
+        ul {
+            display: flex;
+            justify-content: right;
+            gap: 15px;
+        }
+
+    }
+}
+
+

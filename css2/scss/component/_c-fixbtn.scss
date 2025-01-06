@@ -1,0 +1,64 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-fixbtn {
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+
+    .list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-top: 1px solid $white;
+    }
+
+    .item {
+
+        a {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            justify-content: center;
+            text-decoration: none;
+            list-style-type: none;
+            color: #fff;
+            font-size: 16px;
+            width: 100%;
+            text-align: center;
+            background-color: $green;
+            font-family: $font-en-barlow;
+            font-weight: 600;
+            
+
+            &::before {
+                content: "";
+                display: inline-block;
+                width: myrem(27);
+                height: myrem(25);
+                background-image: url("./img/common/mailicon.webp");
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-right: .6em;
+            }
+
+            &:hover {
+                // opacity: .7;
+            }
+        }
+    }
+
+    .item1 {
+        border-right: 1px solid #fff;
+
+        a {
+            &::before {
+                background-image: url("./img/common/telicon.webp");
+                margin-right: .2em;
+            }
+        }
+    }
+
+}

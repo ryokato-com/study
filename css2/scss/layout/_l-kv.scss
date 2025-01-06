@@ -1,0 +1,176 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+
+.l-kv {
+  position: relative;
+
+  .swiper-img {
+    position: relative;
+
+    .imgback {
+      object-fit: cover;
+      width: 100%;
+      height: myrem(450);
+      @include mq(md) {
+        object-fit: unset;
+        height: unset;
+      }
+    }
+
+    dl {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include mq(md) {
+        position: absolute;
+        left: myrem(65);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      dt {
+        max-width: clamp(28.13rem, 42.68vi + -1.22rem, 50rem);
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        @include mq(md) {
+          max-width: clamp(28.13rem, 42.68vi + -1.22rem, 50rem);
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+        }
+
+        .swiper-txt li h2 {
+          color: $green;
+          font-size: myrem(20);
+          text-align: center;
+          margin-bottom: myrem(20);
+          @include mq(md) {
+            font-size: clamp(2.13rem, 1.71vi + 0.95rem, 3rem);
+            margin-bottom: myrem(40);
+          }
+        }
+
+        .swiper-txt li p {
+          text-align: center;
+          margin: 0 auto myrem(20);
+          font-size: myrem(14); //20-24
+          line-height: 1.75em;
+          @include mq(md) { 
+            text-align: center;
+            margin: 0 auto myrem(40);
+            font-size: clamp(1.25rem, 0.49vi + 0.91rem, 1.5rem); //20-24
+            line-height: calc( clamp(1.25rem, 0.49vi + 0.91rem, 1.5rem) * 1.5 );
+          }
+        }
+
+        .swiper-txt li.p-section_service-btn {
+          display: flex;
+          justify-content: center;
+            
+          @include mq(md) { 
+            display: block;
+            margin: 0 auto;
+          }
+
+          a {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      dd img {
+        max-width: myrem(320); //520-680
+        position: relative;
+        @include mq(md) {
+          max-width: clamp(32.5rem, 19.51vi + 19.09rem, 42.5rem); //520-680
+        }
+      }
+    }
+
+    h2.swiper-txt2 {
+      font-size: myrem(28);
+      line-height: calc( myrem(28) * 1.5 );
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      color: $white;
+      text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+      letter-spacing: .1em;
+      text-align: center;
+      @include mq(md) {
+        font-size: clamp(2.38rem, 1.46vi + 1.37rem, 3.13rem);
+        left: myrem(100);
+        transform: translateY(-50%);
+      }
+    }
+
+  }
+
+}
+
+.l-kv--else {
+  padding-top: myrem(60);
+  @include mq(md) {
+    padding-top: myrem(100);
+  }
+}
+
+.l-kv--else_contact {
+
+  &_img img {
+      height: 80vw;
+      object-fit: cover;
+      width: 100%;
+    @include mq(md) {
+      height: unset;
+    }
+  }
+
+  &_logo {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    @include mq(md) {
+      width: 100%;
+    }
+
+    .txt {
+      font-size: myrem(18);
+      color: $white;
+      text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+      @include mq(md) {
+        font-size: myrem(26);
+      }
+    }
+
+    .logo img {
+      display: block;
+      margin: 0 auto;
+      margin-top: myrem(15);
+      width: myrem(120);
+      max-width: 100%;
+      @include mq(md) {
+        width: myrem(298);
+        max-width: 100%;
+        margin-top: myrem(30);
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,225 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.p-section--else_title {
+    margin-bottom: myrem(-40);
+    @include mq(md) {
+        margin-bottom: myrem(-80);
+    }
+
+    .c-section-title {
+        transform : translateY(myrem(-50));
+        display: flex;
+        justify-content: center;
+        padding: myrem(20);
+        @include mq(md) {
+            padding: myrem(40);
+            transform : translateY(myrem(-140));
+        }
+
+        h2 {
+            background-color: $white;
+            padding: myrem(20) myrem(40);
+            @include mq(md) {
+                padding: myrem(40) myrem(80);
+            }
+        }
+    }
+}
+
+
+
+.p-section--else_list {
+
+}
+
+.p-section--else_list2 {
+
+    .p-section--else_item2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: myrem(40);
+        @include mq(md) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: myrem(60);
+        }
+    }
+
+    .img img {
+        height: auto;
+    }
+
+    .txt {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: myrem(15);
+        @include mq(md) {
+            margin-top: myrem(25);
+        }
+    }
+
+    &--cases {
+        background-color: $lightblue;
+        padding: myrem(80) 0;
+        // transform: translateY( myrem(-80) );
+        @include mq(md) {
+            transform: translateY( myrem(-80) );
+        }
+    }
+}
+
+
+
+
+.p-section--else_item {
+
+    li + li {
+        border-top: 1px solid $gray;
+        padding: myrem(30) 0;
+        @include mq(md) {
+            padding: myrem(60) 0;
+        }
+    }
+
+    li:first-child {
+        padding: 0 0 myrem(30) 0;
+        @include mq(md) {
+            padding: 0 0 myrem(60) 0;
+        }
+    }
+
+    dl {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: myrem(20);
+        @include mq(md) {
+            grid-template-columns: myrem(400) 1fr;
+            gap: myrem(50);
+        }
+    }
+}
+
+.p-section--else_thum {
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.p-section--else_pagenation {
+    padding: myrem(50) 0;
+    text-align: center;
+    @include mq(md) {
+        padding: myrem(100) 0;
+    }
+
+    .page-numbers {
+        display: flex;
+        justify-content: center;
+
+        li {
+            margin: 0 2em 0 0;
+        }
+    }
+
+}
+
+.p-section--else_btn .c-btn {
+    margin: myrem(60) auto 0;
+}
+
+.p-section--else_btn-archive {
+
+    img {
+        margin-left: auto;
+        transition: .3s;
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+
+
+.p-section--else_detail {
+
+    .p-contents {
+
+
+
+        .swiper-wrapper {
+            align-items: center;
+            aspect-ratio: 800 / 533;
+        }
+
+
+
+        .swiper-slide {
+            text-align: center;
+        }
+
+        .swiper-slide img {
+            // max-height: myrem(524);
+            // max-height: 524px;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+            &.checked {
+
+            }
+        }
+
+        .thum-lists {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(97px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .swiper-button-next:after {
+            text-rendering: initial;
+            color: rgba(220, 220, 220, .75);
+        }
+
+        .swiper-button-prev:after {
+            text-rendering: initial;
+            color: rgba(220, 220, 220, .75);
+        }
+
+    }
+
+    .p-contents_contact {
+        p {
+            color: $green;
+            text-align: center;
+            margin-top: myrem(60);
+        }
+
+        .c-btn {
+            margin: myrem(25) auto 0;
+        }
+    }
+}
+
+
+.p-table-tag {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5%;
+    @include mq(md) {
+        grid-template-columns: 65% 30%;
+    }
+}
+.p-tag_wrapper {
+    display: flex;
+    flex-direction: column;
+    @include mq(md) {
+        margin: myrem(30) 0 0;
+    }
+}

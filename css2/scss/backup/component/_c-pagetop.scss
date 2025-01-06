@@ -1,0 +1,11 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-pagetop {
+    display: block;
+    margin-left: auto;
+
+    img{
+        margin-left: auto;
+    }
+}

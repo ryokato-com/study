@@ -1,0 +1,100 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-form {
+    table {
+        width: 100%;
+    }
+
+    table tr {
+        border-top: 1px solid;
+    }
+
+    table tr:last-child {
+        border-bottom: 1px solid;
+    }
+
+    table th {
+        padding: myrem(10) 0 myrem(5);
+        font-weight: 500;
+        vertical-align: middle;
+        text-align: left;
+        width: myrem(260);
+        display: block;
+        @include mq(md) {
+            padding: myrem(20) 0;
+            text-align: left;
+            width: myrem(260);
+            display: table-cell;
+        }
+    }
+
+    table th .required {
+        color: #0088ac;
+        margin-left: 0.2em;
+    }
+
+    table td {
+        padding: myrem(5) 0 myrem(10);
+        display: block;
+        @include mq(md) {
+            padding: myrem(20) 0;
+            display: table-cell;
+        }
+    }
+
+    table td input[type="text"],
+    table td input[type="tel"],
+    table td input[type="email"],
+    table td textarea {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 15px 10px;
+        background: $white;
+        border: 2px solid $green;
+    }
+
+    .contact_btn {
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .contact_btn input {
+        font-size: myrem(18);
+        width: myrem(250);
+        max-width: myrem(250);
+        border: 1px solid;
+        border-radius: 9999px;
+        padding: myrem(15) 0;
+        background-color: $green;
+        color: $white;
+        cursor: pointer;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+    }
+
+    .contact_btn input:hover {
+        opacity: 0.65;
+    }
+
+    .contact_btn .wpcf7-spinner {
+        display: block;
+    }
+
+    .contact_confirm {
+        text-align: center;
+        margin-top: 1.875rem;
+    }
+
+    .contact_captcha {
+        text-align: center;
+        margin-top: 1.25rem;
+        font-size: 0.8125rem;
+    }
+    
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+}

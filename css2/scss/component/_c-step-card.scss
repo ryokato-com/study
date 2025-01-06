@@ -1,0 +1,79 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-step-card {
+    
+    &_title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        p {
+            font-size: myrem(18);
+            @include mq(md) {
+                font-size: myrem(24);
+                line-height: calc( myrem(24) * 1.5 );
+            }
+        }
+        
+
+        span {
+            font-size: myrem(16);
+            
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: myrem(30);
+            height: myrem(30);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 0.5em;
+        }
+    }
+
+    &_title--1 { 
+        &::before {
+            background-image: url(./img/contact/1.webp);
+        }
+    }
+
+    &_title--2 { 
+        &::before {
+            background-image: url(./img/contact/2.webp);
+        }
+    }
+
+    &_title--3 { 
+        &::before {
+            background-image: url(./img/contact/3.webp);
+        }
+    }
+
+    &_window {
+        padding: myrem(10) myrem(30);
+        border: 2px solid $green;
+        margin: myrem(40) auto 0;
+        max-width: myrem(400);
+        border-radius: myrem(10);
+    }
+
+    &_caution {
+        color: #f23a31;
+        margin-top: myrem(40);
+        text-align: center;
+        font-size: myrem(18);
+    }
+
+    &_img {
+        display: flex;
+        justify-content: center;
+        margin-top: myrem(20);
+        @include mq(md) {
+            margin-top: myrem(60);
+        }
+    }
+}
+

@@ -1,0 +1,39 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-more-look-btn {
+    // background-color: rgba(255,255,255,.5);
+    width: 100%;
+
+    a {
+        display: inline-flex;
+        justify-content: right;
+        width: 100%;
+        align-items: center;
+        position: relative;
+        transition: .3s;
+        &::after {
+            content: "";
+            display: inline-block;
+            width: myrem(34);
+            height: myrem(34);
+            background-image: url(./img/top/circle-arrow.webp);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-left: 0.5em;
+        }
+        &:hover {
+            opacity: .7;
+        }
+    }
+
+    &.c-more-look-btn--cases {
+        margin-top: myrem(15);
+        @include mq(md) {
+            margin-top: auto;
+        }
+    }
+
+}
+
+

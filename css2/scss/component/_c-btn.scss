@@ -1,0 +1,83 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-btn {
+    font-weight: 200;
+    display: block;
+    max-width: myrem(340);
+    padding: myrem(15) 0;
+    color: #fff;
+    background-color: $green;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-size: myrem(18);
+    transition: .3s;
+    // margin: myrem(30) auto 0;
+    border-radius: 9999px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: myrem(14);
+      height: myrem(14);
+      background-image: url("./img/top/arrow.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: .5em;
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+}
+
+.c-btn--line {
+  background-color: $linegreen;
+}
+
+
+.c-btn--kv {
+  font-weight: 200;
+  display: block;
+  max-width: myrem(200);
+  padding: myrem(4) myrem(8);
+  color: #fff;
+  background-color: $green;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-size: myrem(14);
+  transition: .3s;
+  border-radius: 9999px;
+  @include mq(md) {
+    max-width: myrem(340);
+    padding: myrem(15) 0;
+    background-color: $green;
+    font-size: myrem(18);
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: myrem(14);
+    height: myrem(14);
+    background-image: url("./img/top/arrow.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: .5em;
+  }
+
+  &:hover {
+    opacity: .7;
+  }
+
+}
+
+
+.c-btn--services {
+  width: 100%;
+  @include mq(md) {
+    width: myrem(340);
+  }
+}
+
+
