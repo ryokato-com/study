@@ -1,0 +1,50 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-section-title {
+  font-family: $font-en;
+  font-size: myrem(30);
+  margin-bottom: myrem(10);
+  letter-spacing: .1em;
+  text-align: center;
+  color: $navy;
+  @include mq(md) {
+    font-size: myrem(60);
+    margin-bottom: myrem(40);
+  }
+
+  span {
+    font-size: myrem(12);
+    font-weight: 600;
+    display: block;
+    font-family: $font-main;
+    @include mq(md) {
+      font-size: myrem(16);
+    }
+  }
+}
+
+
+.c-recruit-title {
+  font-family: $font-en;
+  font-size: myrem(30);
+  margin-bottom: myrem(10);
+  letter-spacing: .05em;
+  font-weight: 500;
+  color: $navy;
+  @include mq(md) {
+    font-size: myrem(60);
+    margin-bottom: myrem(40);
+    line-height: myrem(55);
+  }
+
+  span {
+    font-size: myrem(12);
+    font-weight: 600;
+    display: block;
+    font-family: $font-main;
+    @include mq(md) {
+      font-size: myrem(16);
+    }
+  }
+}

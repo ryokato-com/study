@@ -1,0 +1,149 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+
+.l-kv {
+  position: relative;
+  background-color: $navy;
+  background: linear-gradient(to bottom, $navy 88%, #fff 88%);
+  // height: myrem(600);
+}
+
+.l-kv_img {
+  margin-left: myrem(30);
+  @include mq(md) {
+    margin-left: myrem(70);
+  }
+
+  video {
+    width: 100%;
+    outline: none;
+    border: none;
+  }
+}
+
+.l-kv_txt {
+  // font-size: myremu(30);
+  color: $white;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  margin-left: myrem(30);
+  letter-spacing: .2em;
+  @include mq(md) {
+    margin-left: myrem(70);
+  }
+}
+
+.l-kv_txt-list {
+  font-size: myrem(18);
+  font-weight: 600;
+  letter-spacing: .15em;
+  line-height: calc( myrem(18) * 1.75 );
+  @include mq(md) {
+    font-size: myrem(32);
+    line-height: calc( myrem(32) * 1.75 );
+  }
+  @include mq(xl) {
+    font-size: myrem(38);
+    line-height: calc( myrem(38) * 1.75 );
+  }
+}
+
+
+.l-kv_img.animation {
+  position: relative;
+  display: inline-block;
+  overflow: hidden
+}
+
+.l-kv_img.animation::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #0E3B73;
+  // background-color: #b23841;
+  transform: translateX(-100%)
+}
+
+.l-kv_img.animation > video {
+  opacity: 0
+}
+
+.l-kv_img.animation.show > video {
+  animation: showElements .01s .6s forwards;
+  height: 50vh;
+  object-fit: cover;
+  @include mq(sm) {
+    height: unset;
+  }
+  @include mq(md) {
+    // height: unset;
+  }
+}
+
+.l-kv_img.animation.show::before {
+  animation: showMask 1.4s forwards
+}
+
+@keyframes showElements {
+  0% {
+      opacity: 0
+  }
+
+  100% {
+      opacity: 1
+  }
+}
+
+@keyframes showMask {
+  0% {
+      transform: translateX(-100%)
+  }
+
+  45%,55% {
+      transform: translateX(0)
+  }
+
+  100% {
+      transform: translateX(100%)
+  }
+}
+
+// テキストコンテナ全体のフェードインアニメーション
+@keyframes fadeInTextContainer {
+  to {
+    opacity: 1;
+  }
+}
+// テキストのフェードインアニメーション
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px); // 下から上に移動
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 初期状態でテキストを非表示
+.l-kv_txt-list {
+  opacity: 0;
+}
+
+.l-kv_txt-list span {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInText 0.5s forwards; // テキストのアニメーション時間を0.5秒に設定
+}

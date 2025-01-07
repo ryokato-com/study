@@ -1,0 +1,55 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-btn {
+    font-weight: 200;
+    display: block;
+    background-color: $white;
+    color: $navy;
+    border: 1px solid $navy;
+    max-width: myrem(200);
+    padding: myrem(10) 0;
+    position: relative;
+    text-align: center;
+    letter-spacing: .1em;
+    font-size: 1em;
+    transition: .3s;
+
+    &:hover {
+        opacity: .7;
+    } 
+}
+
+
+.c-btn--arrow {
+    font-weight: 200;
+    display: flex;
+    background-color: $white;
+    color: $navy;
+    max-width: 500px;
+    border: 1px solid $navy;
+    padding: myrem(10) myrem(20);
+    position: relative;
+    text-align: center;
+    letter-spacing: .1em;
+    font-size: 1em;
+    transition: .3s;
+    justify-content: center;
+
+    &:hover {
+        opacity: .7;
+    } 
+
+    &::after {
+        content: "";
+        display: inline-flex;
+        width: myrem(20);
+        height: myrem(15);
+        background-image: url("./img/recruit/arrow.webp");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: .6em;
+        align-self: center;
+        justify-self: center;
+    }
+}

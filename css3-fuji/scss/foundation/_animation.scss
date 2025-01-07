@@ -1,0 +1,100 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+
+.l-kv_img.animation {
+  position: relative;
+  display: inline-block;
+  overflow: hidden
+}
+
+.l-kv_img.animation::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #0E3B73;
+  transform: translateX(-100%)
+}
+
+.l-kv_img.animation > img {
+  opacity: 0
+}
+
+.l-kv_img.animation.show > img {
+  animation: showElements .01s .8s forwards;
+  height: 50vh;
+  object-fit: cover;
+  @include mq(sm) {
+    height: unset;
+  }
+  @include mq(md) {
+    // height: unset;
+  }
+}
+
+.l-kv_img.animation.show::before {
+  animation: showMask 1.4s forwards
+}
+
+@keyframes showElements {
+  0% {
+      opacity: 0
+  }
+
+  100% {
+      opacity: 1
+  }
+}
+
+@keyframes showMask {
+  0% {
+      transform: translateX(-100%)
+  }
+
+  45%,55% {
+      transform: translateX(0)
+  }
+
+  100% {
+      transform: translateX(100%)
+  }
+}
+
+
+
+
+
+// テキストコンテナ全体のフェードインアニメーション
+@keyframes fadeInTextContainer {
+  to {
+    opacity: 1;
+  }
+}
+
+// テキストのフェードインアニメーション
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px); // 下から上に移動
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 初期状態でテキストを非表示
+.l-kv_txt-list {
+  opacity: 0;
+}
+
+.l-kv_txt-list span {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInText 0.5s forwards; // テキストのアニメーション時間を0.5秒に設定
+}

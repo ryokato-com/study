@@ -1,0 +1,94 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+// インナー幅＋余白
+$breakpointInner: $innerWidth + strip-unit($padding-pc) * 2;
+
+// ルートフォント設定
+html {
+    // ~ 375px
+  @media (max-width: 375px) {
+    font-size: vw(375, 16);
+  }
+
+  // 376px ~ 767px
+  font-size: 100%;
+
+  // 768px ~ インナー幅＋余白
+  @include mq(md) {
+    font-size: vw(strip-unit($breakpointInner), 16);
+  }
+
+  // インナー幅＋余白 ~
+  @media (min-width: $breakpointInner) {
+    font-size: 100%;
+  }
+}
+
+.sp {
+  display: block;
+  @include mq(md) {
+    display: none !important;
+  }
+}
+
+// フォント、カラー設定
+body {
+  font-family: $font-main;
+  color: $black;
+}
+
+// ホバー
+a,
+button {
+  @include mq(md) {
+    transition: 0.3s;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+//各フォントサイズ
+h1 ,h2, h3, h4, h5, h6 {
+  font-size: myrem(16);
+  font-weight: normal;
+}
+p, ul, li, {
+  font-size: myrem(16);
+  line-height: calc( myrem(16) * 1.85 );
+}
+
+.sp {
+  display: block;
+  @include mq(md) {
+    display: none;
+  }
+}
+.pc {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+// h4 {
+//   font-size: myrem(16);
+//   @include mq(md) {
+//     font-size: myrem(18);
+//   }
+// }
+// h3 {
+//   font-size: myrem(18);
+//   @include mq(md) {
+//     font-size: myrem(20);
+//   }
+// }
+// h2 {
+//   font-size: myrem(20);
+//   @include mq(md) {
+//     font-size: myrem(24);
+//   }
+//   @include mq(lg) {
+//     font-size: myrem(40);
+//   }
+// }

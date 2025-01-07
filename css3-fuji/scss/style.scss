@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+@use "global/setting" as *;
+@use "global/functions" as *;
+
+// Import foundation styles
+@use "foundation/reset";
+@use "foundation/base";
+// @use "foundation/animation";
+
+@use "layout/l-header";
+@use "layout/l-kv";
+@use "layout/l-inner";
+@use "layout/l-footer";
+
+@use "component/c-title";
+@use "component/c-btn";
+@use "component/c-burger";
+@use "component/c-table";
+@use "component/c-form";
+@use "component/c-pagenation";
+
+@use "project/p-news";
+@use "project/p-service";
+@use "project/p-recruit";
+@use "project/p-completion";
+@use "project/p-modal";
+@use "project/p-about";
+
+@use "main/main";

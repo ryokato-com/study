@@ -1,0 +1,35 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.l-footer {
+    color: $navy;
+    text-align: center;
+    font-size: myrem(14);
+
+    &_inner {
+        padding: myrem(40) myrem(20) myrem(20);
+        @include mq(md) {
+            padding: myrem(60) myrem(50) myrem(40);
+        }
+    }
+    .flogo-img {
+        margin: 0 auto;
+    }
+    .flogo-txt {
+        font-size: myrem(22);
+        font-weight: 400;
+        margin: myrem(10) 0 myrem(20);
+    }
+    .company-txt {
+        margin-top: myrem(20);
+    }
+    small {
+        text-align: center;
+        display: block;
+        margin-top: myrem(20);
+        color: $white;
+        background-color: $navy;
+        padding: myrem(10) 0;
+    }
+
+}

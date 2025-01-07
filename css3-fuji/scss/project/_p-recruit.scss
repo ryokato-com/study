@@ -1,0 +1,348 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.p-recruit {
+    margin-top: myrem(60);
+    @include mq(md) {
+        margin-top: myrem(150);
+    }
+}
+
+.p-recruit_lead {
+
+    text-align: center;
+    // position: relative;
+
+    &_wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: myrem(30);
+        align-items: center;
+        @include mq(md) {
+            grid-template-columns: 55% 45%;
+            gap: unset;
+        }
+    }
+
+
+    &_img {
+        // width: 100vw;
+        margin-left: calc(50% - 50vw);
+        // padding-left: calc(50vw - 50%);
+        order: 2;
+        @include mq(md) {
+            order: 1;
+        }
+
+        img {
+            width: 100%;
+            height: myrem(180);
+            object-fit: cover;
+            @include mq(md) {
+                height: clamp(25rem, 19.1vi + 15.83rem, 38.75rem);
+            }
+        }
+    }
+
+
+    &_catch {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: center;
+        justify-content: left;
+        order: 1;
+        text-shadow: 0 0 8px rgb(255, 255, 255, 1);
+        font-weight: normal;
+        font-size: myrem(16);
+        // transform: translateX( myrem(-40) );
+        @include mq(md) {
+            transform: translateX( myrem(-40) );
+            line-height: myrem(32);
+            font-weight: 600;
+            order: 2;
+            font-size: myrem(17);
+        }
+    }
+
+
+    &_btn {
+        align-self: end;
+        margin-top: myrem(20);
+        @include mq(md) {
+            margin-top: myrem(40);
+        }
+
+        .c-btn--arrow {
+            margin-left: auto;
+        }
+    }
+
+}
+
+
+.p-recruit_important { 
+    margin-top: myrem(60);
+    @include mq(md) {
+        margin-top: myrem(150);
+    }
+
+    &_title {
+        margin-bottom: myrem(30);
+        @include mq(md) {
+            margin-bottom: myrem(60);
+        }
+
+        span {
+            font-size: myrem(16);
+            display: block;
+        }
+    }
+
+    &_img-txt {
+        margin-top: myrem(30);
+        @include mq(md) {
+            margin-top: myrem(80);
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: myrem(20);
+            @include mq(md) {
+                grid-template-columns: myrem(268) 1fr;
+                gap: myrem(50);
+            }
+        }
+
+        dt {
+            margin-bottom: myrem(20);
+            @include mq(md) {
+                margin-bottom: myrem(10);
+            }
+        }
+
+        h4 {
+            font-size: myrem(18);
+            color: $navy;
+            @include mq(md) {
+                font-size: myrem(22);
+            }
+        }
+
+    }
+
+    &_img-txt--reverse {
+        margin-top: myrem(30);
+        @include mq(md) {
+            margin-top: myrem(80);
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: myrem(50);
+            @include mq(md) {
+                grid-template-columns: 1fr myrem(268);
+            }
+        }
+
+        li:first-child {
+
+            @include mq(md) {
+                order: 2;
+            }
+        }
+
+        li:last-child {
+
+            @include mq(md) {
+                order: 1;
+            }
+        }
+
+        dt {
+            margin-bottom: myrem(20);
+            @include mq(md) {
+                margin-bottom: myrem(10);
+            }
+        }
+
+        h4 {
+            font-size: myrem(18);
+            color: $navy;
+            @include mq(md) {
+                font-size: myrem(22);
+            }
+        }
+    } 
+
+}
+
+
+.p-recruit_message {
+    margin-top: myrem(80);
+    @include mq(md) {
+        margin-top: myrem(180);
+    }
+
+    .l-inner {
+        padding-top: myrem(40);
+        @include mq(md) {
+            padding-top: unset;
+        }
+    }
+
+    &_title {
+        margin-bottom: myrem(30);
+        // transform: translate( myrem(-50), myrem(-30) );
+        @include mq(md) {
+            transform: translate( myrem(-50), myrem(-30) );
+            margin-bottom: myrem(60);
+        }
+
+        span {
+            font-size: myrem(16);
+            display: block;
+        }
+    }
+
+    &_wrapper {
+        background-color: $gray;
+        margin-left: none;
+        padding-bottom: myrem(80);
+        @include mq(md) {
+            margin-left: myrem(100);
+            padding-bottom: myrem(150);
+        }
+    }
+
+    &_img-txt  {
+        margin-top: myrem(20);
+        @include mq(md) {
+            margin-top: myrem(60);
+        }
+
+
+        ul {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: myrem(20);
+            align-items: center;
+            @include mq(md) {
+                grid-template-columns: myrem(206) 1fr;
+                gap: myrem(50);
+            }
+        }
+
+        dt {
+            font-size: myrem(20);
+            color: $navy;
+            margin-bottom: myrem(15);
+
+            h5 {
+                font-size: myrem(18);
+                @include mq(md) {
+                    font-size: myrem(22);
+                }
+            }
+        }
+
+        img {
+            margin: 0 auto;
+        }
+    }
+
+}
+
+
+.p-recruit_overview {
+
+    margin-top: myrem(60);
+    @include mq(md) {
+        margin-top: myrem(150);
+    }
+
+    &_title {
+        margin-bottom: myrem(30);
+        text-align: center;
+        @include mq(md) {
+            margin-bottom: myrem(60);
+        }
+
+        span {
+            font-size: myrem(16);
+            display: block;
+        }
+    }
+
+    &_table{
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+        border-top: 1px solid $navy;
+        border-bottom: 1px solid $navy;
+        @include mq(md) {
+        }
+
+        tr {
+            transition: .3s;
+            cursor: pointer;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+
+        tr + tr {
+            border-top: 1px solid $navy;
+        }
+
+        th {
+            width: 100%;
+            padding: myrem(10) 0;
+            font-size: myrem(18);
+            font-weight: 500;
+            text-align: left;
+            color: $navy;
+            display: block;
+            @include mq(md) {
+                font-size: myrem(20);
+                width: myrem(180);
+                padding: myrem(20) 0;
+                display: table-cell;
+            }
+        }
+
+        td {
+            padding: 0 0 myrem(10) 0;
+            display: block;
+            @include mq(md) {
+                padding: myrem(20);
+                display: table-cell;
+            }
+        }
+
+        span.one {
+            display: block;
+            text-indent: -1em;
+            padding-left: 1em;
+            margin-bottom: myrem(10);
+        }
+
+        span.two {
+            font-size: myrem(14);
+        }
+    }
+
+}
+
+
+.p-recruit_contact {
+    
+    margin-top: myrem(40);
+    @include mq(md) {
+        margin-top: myrem(100);
+    }
+
+}
