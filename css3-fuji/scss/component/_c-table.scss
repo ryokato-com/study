@@ -1,0 +1,42 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border-top: 1px solid $navy;
+    border-bottom: 1px solid $navy;
+
+    tr {
+        transition: .3s;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+
+    tr + tr {
+        border-top: 1px solid $navy;
+    }
+
+    th {
+        width: myrem(70);
+        padding: myrem(10) 0;
+        font-weight: normal;
+        text-align: left;
+        color: $navy;
+        @include mq(md) {
+            width: myrem(100);
+            padding: myrem(20) 0;
+        }
+    }
+
+    td {
+        padding: myrem(10);
+        @include mq(md) {
+            padding: myrem(20);
+        }
+    }
+}

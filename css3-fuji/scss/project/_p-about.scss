@@ -1,0 +1,23 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.p-about-txt {
+    margin: myrem(40) 0;
+    @include mq(md) {
+        margin: myrem(100) 0;
+    }
+
+    h3 {
+        color: $navy;
+        font-size: myrem(24);      
+        margin-bottom: myrem(15);
+
+        @include mq(md) {
+            font-size: myrem(31);
+            margin-bottom: myrem(30);
+        }
+    }
+}
+
+
+

@@ -1,0 +1,22 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-tag {
+    font-weight: 200;
+    display: block;
+    font-size: myrem(14);
+    padding: myrem(5) myrem(20);
+    color: $white;
+    background-color: $green;
+    text-align: left;
+    letter-spacing: 0.1em;
+    transition: .3s;
+    border-radius: 9999px;
+    max-width: myrem(230);
+    margin-top: myrem(10);
+    @include mq(md) {
+      font-size: myrem(17);
+      max-width: myrem(230);
+      margin-top: myrem(10);
+    }
+}

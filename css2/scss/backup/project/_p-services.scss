@@ -1,0 +1,99 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.p-section--else_our-services {
+
+    &.catch {
+        text-align: center;
+
+        .l-inner {
+            border-bottom: none;
+        }
+
+        p {
+            font-size: myrem(20);
+            text-align: left;
+            @include mq(md) {
+                font-size: myrem(24);
+                text-align: center;
+            }
+        }
+    }
+
+    .l-inner {
+        border-bottom: 1px solid $gray;
+        margin-bottom: myrem(40);
+        padding-bottom: myrem(40);
+        @include mq(md) {
+            margin-bottom: myrem(80);
+            padding-bottom: myrem(80);
+        }
+    }
+
+    &.services {
+
+        .img {
+            img {
+                margin: 0 auto;
+            }
+        }
+
+        h3 {
+            font-size: myrem(22);
+            line-height: calc( myrem(22) * 1.5 );
+            color: $green;
+            text-align: center;
+            margin-top: myrem(60);
+            @include mq(md) {
+                font-size: myrem(30);
+            }
+        }
+
+        .lead {
+            margin-top: myrem(30);
+        }
+    }
+
+    &.services1 {
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: myrem(50);
+            margin-top: myrem(40);
+            @include mq(md) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .list {
+            background-color: $lightblue;
+            padding: myrem(30);
+            border-radius: myrem(20);
+            display: flex;
+            row-gap: myrem(30);
+            flex-direction: column;
+
+            dt {
+                font-size: myrem(22);
+                margin-bottom: myrem(20);
+                @include mq(md) {
+                    font-size: myrem(28);
+                }
+            }
+
+            .c-btn {
+                margin: auto auto 0;
+            }
+        }
+
+    }
+
+    &.services4 {
+
+        .l-inner {
+            border-bottom: none;
+        }
+    }
+
+}

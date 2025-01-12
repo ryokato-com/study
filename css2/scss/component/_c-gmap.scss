@@ -1,0 +1,34 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-gmap {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 60%;    /*16:9の比率にしたい場合、9/16=56.25%*/
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.hidden {
+        display: none;
+    }
+}
+
+.c-gmap--company {
+    padding-top: 80%;
+    margin-bottom: myrem(50);
+    margin-top: myrem(40);
+
+    @include mq(md) {
+        padding-top: 40%;
+        margin-bottom: myrem(100);
+        margin-top: myrem(80);
+    }
+
+}

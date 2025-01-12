@@ -1,0 +1,53 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-voice {
+    background-color: $lightblue;
+    padding: myrem(35);
+    border-radius: myrem(20);
+    margin-top: myrem(40);
+
+    &_wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @include mq(md) {
+            grid-template-columns: 20% 75%;
+            gap: 5%;
+        }
+    }
+
+    &_balloon {
+        position: relative;
+        padding: 20px;
+        width: myrem(150);
+        height: myrem(150);
+        line-height: myrem(110);
+        border-radius: 50%;
+        text-align: center;
+        color: $green;
+        letter-spacing: 0.05em;
+        font-size: 14px;
+        background-color: $white;
+        font-size: myrem(16);
+        margin: 0 auto myrem(30);
+        @include mq(md) {
+            margin: unset;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            left: 50%;
+            bottom: -15px;
+            border-right: 20px solid $white;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            transform: rotate(-90deg) translateY(-50%);
+        }
+    }
+
+}

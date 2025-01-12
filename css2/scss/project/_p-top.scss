@@ -1,0 +1,300 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.p-section {
+    padding: myrem(50) 0;
+    @include mq(md) {
+        padding: myrem(100) 0;
+    }
+
+}
+
+// bnr
+.p-section_bnr {
+
+    padding: myrem(50) 0 0;
+    @include mq(md) {
+        padding: myrem(100) 0 0;
+    }
+
+    .bnr a img {
+        max-width: 100%;
+        margin: 0 auto;
+
+        @include mq(md) {
+            max-width: 80%;
+        }
+    }
+}
+
+// news
+.p-section_news {
+
+}
+
+.p-news_table {
+    &.c-table tr {
+        transition: .3s;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+
+// .p-news_table{
+//     width: 100%;
+//     border-collapse: collapse;
+//     margin: 0 auto;
+//     @include mq(md) {
+//         width: 60%;
+//     }
+
+//     tr + tr {
+//         border-top: 1px solid #c8c8c8;
+//     }
+
+//     th {
+//         width: myrem(100);
+//         padding: myrem(10) 0;
+//         font-weight: normal;
+//         text-align: left;
+//         color: $green;
+//         @include mq(md) {
+//             padding: myrem(20) 0;
+//         }
+//     }
+
+//     td {
+//         padding: myrem(10);
+//         @include mq(md) {
+//             padding: myrem(20);
+//         }
+//     }
+// }
+
+
+// service
+.p-section_service {
+    &-btn {
+        .c-btn {
+            margin:myrem(20) auto 0;
+        }
+    }
+}
+
+.p-service-card {
+
+    &_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: myrem(40);
+        @include mq(md) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: myrem(100);
+        }
+    }
+
+    &_item h3 {
+        font-size: myrem(18);
+        margin: 1em 0;
+        @include mq(md) {
+            font-size: myrem(24);
+        }
+    }
+}
+
+// cases
+.p-section_cases {
+    position: relative;
+    background-color: $lightblue;
+
+    &-btn {
+        .c-btn {
+            margin: myrem(60) auto 0;
+        }
+    }
+}
+
+.p-cases-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: myrem(20);
+    padding: myrem(30) myrem(20) myrem(15);
+    @include mq(md) {
+        padding: myrem(50);
+        grid-template-columns: 35% 60%;
+        gap: 5%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url(./img/top/kado.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: myrem(45);
+        height: myrem(45);
+    }
+
+    &_container {
+        padding: myrem(20);
+        background-color: $white;
+        border-radius: myrem(15);
+        margin-top: myrem(40);
+    }
+
+    &_txt1 {
+        strong {
+            font-size: myrem(20);
+            display: block;
+            @include mq(md) {
+                font-size: myrem(22);
+                margin-bottom: myrem(20);
+            }
+        }
+    }
+
+    &_txt2 {
+        margin-top: myrem(10);
+        @include mq(md) {
+            // margin-top: myrem(unset);
+        }
+    }
+}
+
+// info
+.p-section_info {
+    position: relative;
+
+    &-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: myrem(50);
+        @include mq(md) {
+            grid-template-columns: 47.5% 47.5% ;
+            gap: 5%;
+        }
+    }
+
+    &-more {
+        background-color: rgba(255,255,255,.5);
+        text-align: center;
+        width: 100%;
+        margin-top: auto;
+
+        a {
+            display: inline-flex;
+            padding: myrem(30) 0;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+            position: relative;
+            transition: .3s;
+            &::after {
+                content: "";
+                display: inline-block;
+                width: myrem(34);
+                height: myrem(34);
+                background-image: url(./img/top/circle-arrow.webp);
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-left: 0.5em;
+            }
+            &:hover {
+                opacity: .7;
+            }
+        }
+
+    }
+}
+
+.p-info {
+    background-color: $lightgreen;
+    border-radius: myrem(15);
+    display: flex;
+    flex-direction: column;
+}
+
+// conpany
+.p-section_company {
+
+    &-img-txt {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: myrem(50);
+        @include mq(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &-txt h3 {
+        font-size: myrem(20);
+        line-height: calc( myrem(24) * 1.5 );
+        margin-bottom: myrem(25);
+        @include mq(md) {
+            line-height: calc( myrem(28) * 1.5 );
+            font-size: myrem(28);
+        }
+    }
+    &-btn {
+        .c-btn {
+            margin-top: myrem(60);
+        }
+    }
+}
+
+// contact
+.p-section_contact {
+    background-color: $blue;
+
+    &-comment {
+        font-size: myrem(20);
+        margin-bottom: myrem(30);
+        text-align: center;
+        @include mq(md) {
+            font-size: myrem(24);
+            margin-bottom: myrem(60);
+        }
+    }
+
+    &-voice li {
+        background-color: $white;
+        padding: myrem(20) myrem(20);
+        margin: myrem(20) auto 0;
+        width: 100%;
+        text-align: center;
+        border-radius: 9999px;
+        &:nth-child(even) {
+            margin: myrem(20) myrem(150) 0 auto;
+        }
+        @include mq(md) {
+            margin: myrem(20) auto 0 myrem(200);
+            max-width: myrem(700);
+            &:nth-child(even) {
+                margin: myrem(20) myrem(150) 0 auto;
+            }
+        }
+    }
+    &-btn {
+        .c-btn {
+            margin: myrem(30) auto 0;
+        }
+    }
+
+    &-comment2 p {
+        margin: myrem(40) 0;
+        text-align: center;
+    }
+
+    &-underarrow {
+        display: flex;
+        justify-content: center;
+    }
+
+}

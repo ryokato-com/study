@@ -1,0 +1,14 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+
+.p-completion {
+    text-align: center;
+    padding: myrem(200) 0;
+    background-color: #f1f1f0;
+
+    a {
+        margin-top: myrem(60);
+        display: block;
+    }
+}

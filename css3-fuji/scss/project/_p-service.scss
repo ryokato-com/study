@@ -1,0 +1,101 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+
+.p-service {
+    margin: myrem(40) 0;
+    @include mq(md) {
+        margin: myrem(100) 0;
+    }
+
+    &_lead {
+        text-align: left;
+        @include mq(md) {
+            text-align: center;
+        }
+    }
+
+    &_img-txt {
+        margin-top: myrem(40);
+        @include mq(md) {
+            margin-top: myrem(100);
+        }
+
+        .u_list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: myrem(30);
+            @include mq(md) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: myrem(50);
+            }
+
+            .u_item1 {
+                .d_list {
+                    .d_item1 {
+                        h3 {
+                            color: $navy;
+                            font-size: myrem(24);
+                            margin-bottom: myrem(15);
+                            @include mq(md) {
+                                font-size: myrem(31);
+                                margin-bottom: myrem(30);
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .u_item2 {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &.second {
+
+            .l-inner {
+                border-top: 1px solid $navy;
+                padding-top: myrem(40);
+                @include mq(md) {
+                    padding-top: myrem(100);
+                }
+            }
+
+        }
+    }
+
+    &_4img {
+        margin-top: myrem(40);
+        @include mq(md) {
+            margin-top: myrem(100);
+        }
+
+        .u_list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+    }
+
+    &_4icon {
+        margin-top: myrem(40);
+        @include mq(md) {
+            margin-top: myrem(100);
+        }
+
+        .u_list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            @include mq(md) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .d_item2 {
+            text-align: center;
+        }
+    }
+}

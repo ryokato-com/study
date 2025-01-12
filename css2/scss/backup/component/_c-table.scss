@@ -1,0 +1,47 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.c-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    @include mq(md) {
+        width: 60%;
+    }
+
+    tr + tr {
+        border-top: 1px solid #c8c8c8;
+    }
+
+    th {
+        width: myrem(70);
+        padding: myrem(10) 0;
+        font-weight: normal;
+        text-align: left;
+        color: $green;
+        @include mq(md) {
+            width: myrem(100);
+            padding: myrem(20) 0;
+        }
+    }
+
+    td {
+        padding: myrem(10);
+        @include mq(md) {
+            padding: myrem(20);
+        }
+    }
+}
+
+.c-table--else {
+    margin: myrem(30) auto 0;
+    width: 100%;
+
+    &._cases {
+        max-height: myrem(64);
+    }
+}
+
+.c-table--company {
+    width: 100%;
+}

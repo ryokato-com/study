@@ -1,0 +1,21 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+
+
+
+.p-section--else_title--news {
+    h3 {
+        color: $green;
+        font-size: myrem(26);
+        text-align: center;
+        margin-bottom: myrem(50);
+        line-height: 1.5em;
+
+        @include mq(md) {
+            font-size: myrem(30);
+        }
+    }
+}
+
+

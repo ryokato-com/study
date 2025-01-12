@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@use "global/setting" as *;
+@use "global/functions" as *;
+
+// Import foundation styles
+@use "foundation/reset";
+@use "foundation/base";
+
+@use "component/c-burger";
+@use "component/c-more-look-btn";
+@use "component/c-cases-card";
+@use "component/c-title";
+@use "component/c-btn";
+@use "component/c-table";
+@use "component/c-tag";
+@use "component/c-top-info-card";
+@use "component/c-step-card";
+@use "component/c-else-title";
+@use "component/c-gmap";
+@use "component/c-form";
+@use "component/c-pagetop";
+@use "component/c-voice";
+@use "component/c-fixbtn";
+
+@use "layout/l-header";
+@use "layout/l-kv";
+@use "layout/l-inner";
+@use "layout/l-footer";
+
+@use "project/p-top";
+@use "project/p-common";
+@use "project/p-page_news";
+@use "project/p-contact";
+@use "project/p-services";
+@use "project/p-company";
+
+@use "utility/utility";

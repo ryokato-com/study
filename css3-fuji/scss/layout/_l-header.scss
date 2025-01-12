@@ -1,0 +1,142 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.l-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $navy;
+  height: myrem(50);
+  z-index: 2;
+  width: 100%;
+  @include mq(md) {
+    height: myrem(60);
+  }
+
+  &.fixed {
+    position: fixed;
+    .logo {
+      width: myrem(300);
+      transform: translateY(0);
+      h1 {
+        font-size: myrem(18);
+      }
+      img {
+        width: myrem(40);
+      }
+    }
+  }
+
+  .logo {
+    // position: relative;
+    width: myrem(250);
+    padding: 0 myrem(10);
+    transform: translateY( myrem(25) );
+    display: flex;
+    align-items: center;
+    @include mq(md) {
+      width: myrem(400);
+      padding: 0 myrem(30);
+      transform: translateY( myrem(30) );
+    }
+    img {
+      width: myrem(55);
+      @include mq(md) {
+        width: myrem(78);
+      }
+    }
+    h1 {
+      font-size: myrem(20);
+      font-weight: 400;
+      letter-spacing: .15em;
+      color: $white;
+      font-family: $font-logo;
+      margin-left: myrem(10);
+      @include mq(md) {
+        font-size: myrem(24);
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    height: 100%;
+    gap: myrem(15);
+  }
+
+  .nav_list {
+    display: none;
+
+    @include mq(md) {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(4, 1fr);
+      gap: myrem(25);
+    }
+  }
+
+  .nav_item {
+    color: $black;
+    @include mq(md) {
+      font-size: myrem(16);
+      color: $white;
+    }
+  }
+
+  .contact {
+    padding: 0 myrem(10);
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    font-size: myrem(14);
+    @include mq(md) {
+      font-size: myrem(16);
+      padding: 0 myrem(20);
+    }
+  }
+}
+
+
+.l-header--else {
+  position: relative;
+  padding-top: myrem(50);
+  @include mq(md) {
+    padding-top: myrem(60);
+  }
+
+  h2 {
+    font-size: myrem(30);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $white;
+    font-family: $font-en;
+    letter-spacing: .1em;
+    font-weight: normal;
+    line-height: .5em;
+    @include mq(md) {
+      font-size: myrem(60);
+    }
+
+    span {
+      font-family: $font-main;
+      font-size: myrem(16);
+      display: block;
+      margin-top: myrem(20);
+    }
+
+  }
+
+  img {
+    height: myrem(180);
+    object-fit: cover;
+    @include mq(md) {
+      height: auto; 
+    }
+  }
+
+
+}

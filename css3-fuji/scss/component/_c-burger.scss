@@ -1,0 +1,105 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+
+.burger {
+  width: myrem(30);
+  height: myrem(30);
+  top: myrem(15);
+  right: myrem(90);
+  position: absolute;
+  z-index: 100;
+}
+
+.burger-line {
+  position: absolute;
+  height: 1px;
+  background: $white;
+  transition: 0.4s
+}
+
+.burger-line1 {
+  top: 0;width: 30px;
+}
+
+.burger-line2 {
+  top: 10px;width: 30px;
+}
+
+.burger-line3 {
+  top: 20px;width: 30px;
+}
+
+.burger.close {
+  .burger-line1 {
+    top: 14px;
+    width: 30px;
+    transform: rotate(45deg);
+    background: $black;
+  }
+  .burger-line2 {
+    top: 14px;
+    width: 30px;
+    transform: rotate(-45deg);
+    background: $black;
+  }
+  .burger-line3 {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.menu {
+  display: none;
+  transition: .4s;
+
+  &.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 35px;
+    display: block;
+    // height: 100%;
+    line-height: 4rem;
+
+    .menu_item {
+      margin-bottom: myrem(20);
+    }
+  }
+}
+
+
+
+    /* ナビボタン */
+    // .burger {position: relative;width: 30px;height: 30px;display: block;}
+    // .burger .burger-line {position: absolute;height: 1px;background: $white;-webkit-transition: 0.4s;transition: 0.4s;}
+    // .burger-line1 {top: 0;width: 40px;}
+    // .burger-line2 {top: 10px;width: 40px;}
+    // .burger-line3 {top: 20px;width: 40px;}
+    // .burger.close .burger-line1 {top: 14px;width: 30px;-webkit-transform: rotate(45deg);transform: rotate(45deg);background: $black;}
+    // .burger.close .burger-line2 {top: 14px;width: 30px;-webkit-transform: rotate(-45deg);transform: rotate(-45deg);background: $black;}
+    // .burger.close .burger-line3 {opacity: 0;visibility: hidden;}
+    /* end ナビボタン */
+
+    // .menu {display: none;transition: .4s;}
+    // .menu.active {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     margin: auto;
+    //     width: 100%;
+    //     box-sizing: border-box;
+    //     -webkit-box-sizing: border-box;
+    //             box-sizing: border-box;
+    //     background: rgba(255, 255, 255, 0.9);
+    //     padding: 35px;
+    //     display: block;
+    //     height: 100%;
+    //     line-height: 4rem;
+    // }

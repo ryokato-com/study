@@ -1,0 +1,22 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+
+.u-mt-40-sp {
+    margin-top: myrem(40);
+}
+.u-mb-40-sp {
+    margin-bottom: myrem(40);
+}
+
+@include mq(md) {
+    .u-mt-60 {
+        margin-top: myrem(60);
+    }
+    .u-mt-80 {
+        margin-top: myrem(80);
+    }
+    .u-mb-60 {
+        margin-bottom: myrem(60);
+    }
+}

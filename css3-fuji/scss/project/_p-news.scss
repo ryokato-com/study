@@ -1,0 +1,48 @@
+@use "../global/setting" as *;
+@use "../global/functions" as *;
+
+.p-news {
+    margin: myrem(150) 0;
+}
+
+.p-news-list {
+    margin: myrem(100) 0;
+}
+
+
+.p-news-single_title {
+    margin-bottom: myrem(40);
+
+    h3 {
+        font-size: myrem(25);
+        color: $navy;
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+
+        &::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background-color: $navy;
+        }
+    }
+}
+
+.p-news-single_btn {
+    margin-top: myrem(100);
+
+    .c-btn {
+        margin: 0 auto;
+    }
+
+}
+
+.p-pagenation--archive {
+    padding: 0 0 myrem(100) 0;
+}
+
+.p-pagenation--single {
+    padding: myrem(100) 0 0 0;
+    text-align: center;
+}

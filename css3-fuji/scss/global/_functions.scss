@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+@function strip-unit($value) {
+  @if type-of($value) == 'number' and not unitless($value) {
+    @return math.div($value, ($value * 0 + 1));
+  }
+  @return $value;
+}
+
+@function vw($viewport-width, $size) {
+  $rate: math.div(100, $viewport-width);
+  @return $rate * $size * 1vw;
+}
+
+@function myrem($size) {
+  @return math.div($size, 16) * 1rem;
+}
